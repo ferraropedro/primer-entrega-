@@ -26,13 +26,13 @@ bebidas.push(new Bebida("cocacola", "300"));
 bebidas.push(new Bebida("speed", "200"));
 
 function encotrarBebida(arrayBebidas, bebidaAEncontrar) {
-  for (bebida of arrayBebidas) {
+  for (const bebida of arrayBebidas) {
     if (bebidaAEncontrar == bebida.nombre) return bebida;
   }
 }
 
 function encontrarIndice(arrayBebidas, bebidaAEncontrar) {
-    for (bebida of arrayBebidas) {
+    for (const bebida of arrayBebidas) {
       if (bebidaAEncontrar == bebida.nombre) return arrayBebidas.indexOf(bebida);
     }
 }
@@ -41,13 +41,13 @@ function encontrarIndice(arrayBebidas, bebidaAEncontrar) {
 function ingresarPersonas() {
   let nombre;
   do {
-    nombre = prompt("Ingrese el nombre de la persona");
+    nombre = prompt("Ingrese su nombre");
     if (nombre == "") {
       break;
     }
 
-    let apellido = prompt("Ingrese el apellido del alumno");
-    let bebida = prompt("Ingrese la bebida del alumno");
+    let apellido = prompt("Ingrese su apellido");
+    let bebida = prompt("Ingrese la bebida que va a comprar");
     let persona = new Persona(nombre, apellido, bebida);
     let bebidaEncontrado = encotrarBebida(bebidas, bebida); //find
 
